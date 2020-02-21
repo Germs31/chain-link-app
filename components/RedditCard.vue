@@ -1,9 +1,21 @@
 <template>
   <div>
     <div v-for="news in redditNews" v-bind:key="news">
-        <h1>{{news.title}}</h1>
+        <v-card class="mx-auto" max-width="344" outlined>
+            <v-list-item three-line>
+                <v-list-item-content>
+                    <v-list-item-title class="headline mb-1">{{news.title}}</v-list-item-title>
+                    <v-list-item-subtitle>{{news.publishedAt}}</v-list-item-subtitle>
+
+                    <v-card-actions>
+                        <v-btn text v-bind:href="news.url" target="_blank">Link</v-btn>
+                    </v-card-actions>
+                </v-list-item-content>
+            </v-list-item>
+        </v-card>
     </div>
   </div>
+  
 </template>
 
 <script>
