@@ -7,7 +7,7 @@
     </div>
     <!-- card  -->
     <div class="reddit-card-container">
-      <RedditCard/>
+      <RedditCard v-bind:redditNews="redditNews"/>
     </div>
   </div>
 </template>
@@ -15,6 +15,7 @@
 <script>
 import axios from 'axios'
 import RedditCard from '@/components/RedditCard'
+
 export default {
   components: {
     RedditCard
@@ -22,7 +23,7 @@ export default {
   data(){
     return {
       cryptos: [],
-      title: 'hello'
+      redditNews: [],
     }
   },
   async created() {
@@ -30,10 +31,19 @@ export default {
       const cryptoCur = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.cryptId}&ids=LINK`);
 
       this.cryptos = cryptoCur.data
-      console.log(this.cryptos)
+      // console.log(this.cryptos)
 
     } catch (error) {
       console.log(error);
+    }
+
+    try {
+      const linkNews = await axios.get(`https://cryptocontrol.io/api/v1/public/reddit/coin/chainlink?key=${process.env.newsId}`);
+      // console.log(linkNews)
+      this.redditNews = linkNews.data
+      console.log(this.redditNews)
+    } catch (error) {
+      console.log(error)
     }
   }
 }
