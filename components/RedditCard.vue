@@ -9,7 +9,7 @@
                     <v-list-item-subtitle>{{news.publishedAt}}</v-list-item-subtitle>
 
                     <v-card-actions>
-                        <v-btn text v-bind:href="news.url" target="_blank">Link</v-btn>
+                        <v-btn large color="#3a4660" v-bind:href="news.url" target="_blank">Link</v-btn>
                     </v-card-actions>
                 </v-list-item-content>
             </v-list-item>

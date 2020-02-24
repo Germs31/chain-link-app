@@ -73,8 +73,9 @@ export default {
 .chainlink-about{
   margin: 2%;
   background: #3a4660;
-  height: 75vh;
+  height: 100%;
   width: 100%;
+  border-radius: 2%;
 }
 
 .reddit-card-container{
@@ -90,11 +91,11 @@ export default {
   .chainlink-about{
     order: -1;
     width: 100%;
-    margin: auto;
+    margin: 2% auto;
   }
 
   .reddit-card-container{
-    margin: auto;
+    margin: 5% auto;
   }
 }
 
