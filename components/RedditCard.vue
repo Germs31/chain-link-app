@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Reddit News Articles</h2>
-    <v-flex py-3 v-for="news in redditNews" v-bind:key="news">
+    <v-flex v-for="news in redditNews" v-bind:key="news">
         <v-card class="reddit-card" max-width="500" outlined>
             <v-list-item three-line>
                 <v-list-item-content>
@@ -27,8 +27,5 @@ export default {
 console.log()
 </script>
 
-<style scooped>
-    .reddit-card , h2{
-        margin-left: 50px;
-    }
+<style>
 </style>

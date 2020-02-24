@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container" v-for="crypto in cryptos" v-bind:key="crypto.id">
+    <div class="container-1" v-for="crypto in cryptos" v-bind:key="crypto.id">
       <h1>{{crypto.currency}}</h1>
       <img width="100px" height="100px" v-bind:src="crypto.logo_url" />
       <h2>{{crypto.price}}</h2>
@@ -12,7 +12,7 @@
       </div>
       <!-- about Chain Link -->
       <div class="chainlink-about">
-        <ChainLink v-bind:cryptos="cryptos" mx-auto/>
+        <ChainLink v-bind:cryptos="cryptos"/>
       </div>
     </div>
   </div>
@@ -55,8 +55,10 @@ export default {
 </script>
 
 <style>
-.container{
+
+.container-1{
   height: 25vh;
+  width: 100%;
   background: #3a4660;
   display: flex;
   justify-content: space-around;
@@ -65,13 +67,35 @@ export default {
 
 .container-2{
   display: flex;
+  padding: 2%;
 }
 
 .chainlink-about{
+  margin: 2%;
   background: #3a4660;
   height: 75vh;
-  width: 52%;
-  margin: 20px 0 10px 20px;
+  width: 100%;
+}
+
+.reddit-card-container{
+  margin: 2%;
+}
+
+
+@media (max-width: 1000px){
+  .container-2{
+    flex-direction: column;
+  }
+
+  .chainlink-about{
+    order: -1;
+    width: 100%;
+    margin: auto;
+  }
+
+  .reddit-card-container{
+    margin: auto;
+  }
 }
 
 </style>
